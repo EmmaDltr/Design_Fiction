@@ -63,6 +63,7 @@ body{
     &__content {
       display: flex;
       justify-content: space-between;
+      align-items: center;
       padding: 20px 50px;
     }
 
@@ -98,16 +99,23 @@ body{
         margin: 0 30px;
         text-decoration: none; // MArche ppassss
         cursor: pointer;
-  
+        a {
+            text-decoration: none;
+            color: #1E1E1E;
+        }
       }
     }
   
     &__separator {
-      display: flex;
-      justify-content: center;
       position: absolute;
       margin-top: -40px;
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
       z-index: 1;
+      width: 100%;
+      max-width: 1440px;
+  
   
       &-img {
         width: 100%;
@@ -241,4 +249,51 @@ body{
     }
   }
   
+  .explore {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 100px 0;
+  
+    &__content {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+    }
+  
+    &__frame {
+      background-image: url("assets/img/cadre.svg"); // ton image cadre
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+      padding: 100px; // ajuste en fonction de ton image
+      max-width: 900px;
+      width: 100%;
+      text-align: center;
+      position: relative;
+    }
+  
+    &__img,
+    &__img--overlay img {
+      width: 100%;
+      max-width: 400px;
+      margin: 0 auto;
+      display: block;
+    }
+  
+    &__title {
+        
+      font-size: 120px;
+      margin-top: 30px;
+      font-family: 'Azedo', sans-serif;
+      font-weight: 700;
+    }
+  
+    &__text {
+      font-size: 40px;
+      margin-top: 10px;
+      font-family: 'Azedo', sans-serif;
+      font-weight: 700;
+    }
+  }
   
