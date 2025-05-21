@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Sensora</title>
+    <link rel="shortcut icon" href="assets/img/favicon.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Sensora - Nos films">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="../style.css">
+    <script src="../script.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <nav class="nav">
+            <div class="nav__logo">
+                <img class="nav__logo-img"src="../assets/img/logo.png" alt="Logo de Sensora">
+            </div>
+            <ul class="nav__list">
+                <li class="nav__el"><a href="#home">Home</a></li>
+                <li class="nav__el"><a href="#about">Nos films</a></li>
+                <li class="nav__el"><a href="#contact">Guide</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="movie">
+            <div class="movie__content">
+                <h3 class="movie__title">Quel film allez vous réinventer ?</h2>
+                <p class="movie__text">Prêt à jouer avec x films préférés ? Plongez dans notre catalogue culte, mixez les genres, saupoudrez d’émotions, et découvrez les versions inédites des plus grands classiques.</p>
+                <p> Horreur romantique ? Comédie anxiogène ? À vous de jouer, et surtout… amusez-vous !</p>
+            </div>
+        </section>
+       <section class="filter">
+            <div class="filter__content">
+                <form class="filter__form">
+                    <label for="classer">Classer par:</label>
+                    <select id="classer" name="classer">
+                        <option value="new">le plus récent</option>
+                        <option value="old">le plus ancien</option>
+                    </select>
+                    <label for="genre">Genre :</label>
+                    <select id="genre" name="genre">
+                        <option value="all">Tous</option>
+                        <option value="action">Action</option>
+                        <option value="comedy">Comédie</option>
+                        <option value="drama">Drame</option>
+                        <option value="horror">Horreur</option>
+                        <option value="romance">Romance</option>
+                    </select>
+                    <a class="filter__btn" href="pages/film.html">Aléatoire</a>
+                </form>
+            </div>
+        </section>
+        <section class="catalogue">
+            <div class="catalogue__item">
+                <h5 class="catalogue__title">La la land</h5>
+                <img class="catalogue__img" src="../assets/img/films_classic/lalaland_classic.jpg" alt="Film 1">
+                <p class="catalogue__description">De Damien Chazelle</p>
+                <a class="catalogue__btn" href="pages/film.html"></a>
+            </div>
+            <div class="catalogue__item">
+                <h5 class="catalogue__title">Titanic</h5>
+                <img class="catalogue__img" src="../assets/img/films_classic/titanic_classic.webp" alt="Film 2">
+                <p class="catalogue__description">De James Cameron</p>
+                <a class="catalogue__btn" href="pages/film.html"></a>
+        </section>
