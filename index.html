@@ -1,74 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <title>Sensora</title>
-    <link rel="shortcut icon" href="assets/img/favicon.png">
+    <link rel="shortcut icon" href="img/favicon.png">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Sensora - Une application web">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <link rel="stylesheet" href="style.css">
-    <script src="script.js" defer></script>
+    <script type="module" src="src/main.js"></script>
 </head>
 
 <body>
+    <div class="slider">
+        <button id="toggle-theme">SLIDE</button>
+    </div>
     <div class="decorative__ellipse">
-        <img src="assets/img/ellipse.svg" alt="" class="decorative__ellipse--img" />
+        <img src="img/ellipse.svg" alt="" class="decorative__ellipse--img" />
     </div>
     <header>
         <nav class="nav">
             <div class="nav__content">
                 <div class="nav__logo">
-                    <span class="nav__logo--highlight">EXP.</span>
-                    Sensora
+                    <span class="nav__logo--highlight">EXP.</span> Sensora
                 </div>
-                <ul class="nav__list">
-                    <li class="nav__list--item"><a href="#home">Home</a></li>
-                    <li class="nav__list--item"><a href="#about">Nos films</a></li>
-                    <li class="nav__list--item"><a href="#contact">Guide</a></li>
-                </ul>
+                <div class="nav__links">
+                    <ul class="nav__list">
+                        <li class="nav__list--item"><a href="#home">Home</a></li>
+                        <li class="nav__list--item"><a href="#about">Nos films</a></li>
+                        <li class="nav__list--item"><a href="#contact">Guide</a></li>
+                    </ul>
+                    <img src="img/right-separator.svg" id="nav-right-separator" alt=""
+                        class="nav__right-separator-img" />
+                </div>
             </div>
             <div class="nav__separator">
-            <img src="assets/img/separator.svg" alt="" class="nav__separator-img" />
-          </div>
+                <img src="img/separator.svg" id="nav-separator" alt="" class="nav__separator-img" />
+            </div>
         </nav>
     </header>
-    <main>
+    <main id="app">
         <section class="hero" id="home">
             <div class="hero__content">
                 <h1 class="hero__title">
-                    <span class="hero__title--highlight">EXP.</span>
-                    Sensora
+                    <span class="hero__title--highlight">EXP.</span> Sensora
                 </h1>
                 <p class="hero__text">Et si vos émotions réecrivaient le scénario ?</p>
                 <div class="hero__btn">
-                <a href="pages/catalogue.html" class="hero__btn--link">Créez votre expérience</a>
+                    <a href="catalogue.html" class="hero__btn--link">Créez votre expérience</a>
                 </div>
+            </div>
+        </section>
+        <section class="wrapper">
+            <div class="scroll-wrapper">
+                <div class="film-card" id="film">Mon film</div>
+            </div>
+            <div class="processor-zone">
+                <img src="img/processor_dark.svg" alt="" id="processor">
+                <div class="alternative-version" id="alternative-version"> alternative-version </div>
             </div>
         </section>
         <section class="about">
             <div class="about__content">
-                <p class="about__text">Bienvenue dans une nouvelle ère, où l'<span class="about__text--highlight">intelligence artificielle</span> réinvente vos films préférés, en transformant <span class="about__text--highlight">vos émotions</span> en scénarios vivants.</p>
-                <p class="about__text">Imaginez <span class="about__text--highlight">La La Land</span>en film d’horreur, <span class="about__text--highlight">Titanic</span> porté par l’euphorie, ou <span class="about__text--highlight">Inception</span> teinté de tendresse. Ici, plus de films figés : chaque projection est une expérience unique, une rencontre entre les classiques du cinéma et vos ressentis.</p>
-                <blockquote class="about__quote">
-                     « Un film, ce n’est pas ce que l’on voit, mais ce que l’on ressent. »
-                     <cite class="about__author">— Andrei Tarkovski</cite>
+                <p class="about__text">Bienvenue dans une nouvelle ère, où l'<span
+                        class="about__text--highlight">intelligence artificielle</span> réinvente vos films préférés, en
+                    transformant <span class="about__text--highlight">vos émotions</span> en scénarios vivants.</p>
+                <p class="about__text">Imaginez <span class="about__text--highlight">La La Land</span>en film d’horreur,
+                    <span class="about__text--highlight">Titanic</span> porté par l’euphorie, ou <span
+                        class="about__text--highlight">Inception</span> teinté de tendresse. Ici, plus de films figés :
+                    chaque projection est une expérience unique, une rencontre entre les classiques du cinéma et vos
+                    ressentis.</p>
+                <blockquote class="about__quote"> « Un film, ce n’est pas ce que l’on voit, mais ce que l’on ressent. »
+                    <cite class="about__author">— Andrei Tarkovski</cite>
                 </blockquote>
             </div>
-        </section>   
+        </section>
         <section class="explore">
             <div class="explore__content">
-               <div class="explore__frame">
+                <div class="explore__frame">
                     <div class="explore__img">
-                        <img src="assets/img/films_classic/lalaland_classic.jpg" alt="Film 1">
+                        <img src="img/films_classic/lalaland_classic.jpg" alt="Film 1">
                     </div>
                     <div class="explore__img--overlay">
-                        <img class="explore__img" src="assets/img/films_IA/lalaland_horreur.png" alt="Film 2">
+                        <img class="explore__img" src="img/films_IA/lalaland_horreur.png" alt="Film 2">
                     </div>
                     <h2 class="explore__title">Explorez</h2>
                     <h4 class="explore__text">Votre propre cinéma</h4>
-                </div> 
+                </div>
             </div>
         </section>
         <section class="guide">
@@ -81,7 +99,7 @@
                 <a class="guide__btn" href="pages/catalogue.html"> Créez votre expérience </a>
             </div>
         </section>
-
     </main>
 </body>
+
 </html>
