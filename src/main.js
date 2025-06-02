@@ -1,9 +1,11 @@
 'use strict';
 
 import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+
 // Import styles
 import './style.scss';
+const page = window.location.pathname;
+
 
 const btn = document.getElementById('toggle-theme');
 const app = document.getElementById('app');
@@ -17,8 +19,8 @@ btn.addEventListener('click', () => {
     const blackColor = '#1e1e1e';
     const whiteColor = '#bfbfbf';
 
-    const blackBg = "url(\"img/background_dark.png\")"
-    const whiteBg = "url(\"img/background_light.png\")";
+    const blackBg = "url(\"/img/background_dark.png\")"
+    const whiteBg = "url(\"/img/background_light.png\")";
     // slide out
     gsap.to(app, {
         x: direction,
@@ -34,8 +36,8 @@ btn.addEventListener('click', () => {
                 '--bg-image': !isDark ? blackBg : whiteBg,
                 duration: 0.3
             });
-
-            processor.src = !isDark ? 'img/processor_dark.svg' : 'img/processor_light.svg';
+            if (page.endsWith("index.html") || page === "/")
+                processor.src = !isDark ? '/img/processor_dark.svg' : '/img/processor_light.svg';
 
             // slide in depuis l'autre côté
             gsap.fromTo(app,
@@ -47,47 +49,10 @@ btn.addEventListener('click', () => {
         }
     });
 });
+if (page.endsWith("index.html") || page === "/") {
+    import('./home.js');
+}
 
-gsap.registerPlugin(ScrollTrigger);
-
-gsap.to('#film', {
-    scrollTrigger: {
-        trigger: '.hero',
-        start: 'bottom bottom',
-        endTrigger: '#processor',
-        end: 'top center',
-        scrub: true,
-        markers: false
-    },
-    y: () => {
-        const film = document.getElementById('film');
-        const processorY = processor.getBoundingClientRect().top + window.scrollY;
-        const filmY = film.getBoundingClientRect().top + window.scrollY;
-        return processorY - filmY;
-    }
-});
-
-ScrollTrigger.create({
-    trigger: '#processor',
-    start: 'top 60%', // ⬅️ au lieu de 'top center' → ça déclenche un peu avant
-    toggleActions: 'play none none reverse',
-    onEnter: () => {
-        gsap.to('#alternative-version', {
-            y: 150,
-            opacity: 1,
-            duration: 0.6,
-            ease: 'power2.out'
-        });
-    },
-    onLeaveBack: () => {
-        gsap.to('#alternative-version', {
-            y: 0,
-            opacity: 0,
-            duration: 0.4,
-            ease: 'power2.in'
-        });
-    },
-    markers: false
-});
-
-
+if (page.endsWith("catalogue.html") || page === "catalogue") {
+    import('./catalogue.js');
+}

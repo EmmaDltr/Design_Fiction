@@ -8,11 +8,16 @@
     <meta name="description" content="Sensora - Nos films">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <link rel="stylesheet" href="../style.css">
-    <script src="../script.js" defer></script>
+    <script type="module" src="src/main.js" defer></script>
 </head>
 
 <body>
+    <div class="slider">
+        <button id="toggle-theme">SLIDE</button>
+    </div>
+    <div class="decorative__ellipse">
+        <img src="img/ellipse.svg" alt="" class="decorative__ellipse--img" />
+    </div>
     <header>
         <nav class="nav">
             <div class="nav__content">
@@ -27,11 +32,11 @@
                 </ul>
             </div>
             <div class="nav__separator">
-            <img src="../assets/img/separator.svg" alt="" class="nav__separator-img" />
+            <img src="img/separator.svg" alt="" class="nav__separator-img" />
           </div>
         </nav>
     </header>
-    <main>
+    <main id="app">
         <section class="movie">
             <div class="movie__content">
                 <h3 class="movie__title">Quel film allez vous réinventer ?</h2>
@@ -56,20 +61,20 @@
                         <option value="horror">Horreur</option>
                         <option value="romance">Romance</option>
                     </select>
-                    <a class="filter__btn" href="pages/film.html">Aléatoire</a>
+                    <a class="filter__btn" href="film.html">Aléatoire</a>
                 </form>
             </div>
         </section>
         <section class="catalogue">
             <div class="catalogue__item">
                 <h5 class="catalogue__title">La la land</h5>
-                <img class="catalogue__img" src="../assets/img/films_classic/lalaland_classic.jpg" alt="Film 1">
+                <img class="catalogue__img" src="img/films_classic/lalaland_classic.jpg" alt="Film 1">
                 <p class="catalogue__description">De Damien Chazelle</p>
-                <a class="catalogue__btn" href="pages/film.html"></a>
+                <a class="catalogue__btn" href="film.html"></a>
             </div>
             <div class="catalogue__item">
                 <h5 class="catalogue__title">Titanic</h5>
-                <img class="catalogue__img" src="../assets/img/films_classic/titanic_classic.webp" alt="Film 2">
+                <img class="catalogue__img" src="img/films_classic/titanic_classic.webp" alt="Film 2">
                 <p class="catalogue__description">De James Cameron</p>
-                <a class="catalogue__btn" href="pages/film.html"></a>
+                <a class="catalogue__btn" href="film.html"></a>
         </section>

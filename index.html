@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Sensora - Une application web">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script type="module" src="src/main.js"></script>
+    <script type="module" src="src/main.js" defer></script>
 </head>
 
 <body>
@@ -76,27 +76,35 @@
             </div>
         </section>
         <section class="explore">
-            <div class="explore__content">
-                <div class="explore__frame">
+            <div class="frame">
+                <div class="explore__imgs">
                     <div class="explore__img">
-                        <img src="img/films_classic/lalaland_classic.jpg" alt="Film 1">
+                        <img src="img/films_IA/lalaland_horreur.png" alt="Film 2" width="600">
                     </div>
-                    <div class="explore__img--overlay">
-                        <img class="explore__img" src="img/films_IA/lalaland_horreur.png" alt="Film 2">
+                    <div class="explore__img explore__img--overlay">
+                        <img src="img/films_classic/lalaland_classic.jpg" alt="Film 1" width="600">
                     </div>
-                    <h2 class="explore__title">Explorez</h2>
-                    <h4 class="explore__text">Votre propre cinéma</h4>
                 </div>
+                <h2 class="frame__title">Explorez</h2>
+                <h4 class="frame__text">Votre propre cinéma</h4>
+                <img class="frame__img" src="img/cadre.svg" alt="">
             </div>
         </section>
         <section class="guide">
-            <div class="guide__content">
-                <h2 class="guide__title">Manuel</h2>
-                <p class="guide__text">Choissez votre film dans notre catalogue.</p>
-                <p class="guide__text">Personnalisez-le selon votre mood du moment.</p>
-                <p class="guide__text">Redécouvrez votre film préféré.</p>
-                <p class="guide__text">Partagez votre expérience avec vos amis.</p>
-                <a class="guide__btn" href="pages/catalogue.html"> Créez votre expérience </a>
+            <div class="frame frame--nocenter">
+                <h2 class="frame__title">Manuel</h2>
+                <p class="frame__text">
+                    <a class="guide__btn" href="catalogue.html"> Créez votre expérience </a>
+                </p>
+                <div class="guide__content">
+                    <ol>
+                        <li class="guide__text">Choissez votre film dans notre catalogue.</li>
+                        <li class="guide__text">Personnalisez-le selon votre mood du moment.</li>
+                        <li class="guide__text">Redécouvrez votre film préféré.</li>
+                        <li class="guide__text">Partagez votre expérience avec vos amis.</li>
+                    </ol>
+                </div>
+                <img class="frame__img" src="img/cadre.svg" alt="">
             </div>
         </section>
     </main>
