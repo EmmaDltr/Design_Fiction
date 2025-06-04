@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Sensora</title>
+    <link rel="shortcut icon" href="img/favicon.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Sensora - Une application web">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="module" src="src/main.js" defer></script>
+</head>
+
+<body>
+    <div class="slider">
+        <button id="toggle-theme">SLIDE</button>
+    </div>
+    <div class="decorative__ellipse">
+        <img src="img/ellipse.svg" alt="" class="decorative__ellipse--img" />
+    </div>
+    <header>
+        <nav class="nav">
+            <div class="nav__content">
+                <a href="index.html" class="nav__logo">
+                    <span class="nav__logo--highlight">EXP.</span> Sensora
+                </a>
+                <div class="nav__links">
+                    <ul class="nav__list">
+                        <li class="nav__list--item"><a href="index.html">Home</a></li>
+                        <li class="nav__list--item"><a href="catalogue.html">Nos films</a></li>
+                        <li class="nav__list--item"><a href="index.html#guide">Guide</a></li>
+                    </ul>
+                    <img src="img/right-separator.svg" id="nav-right-separator" alt=""
+                        class="nav__right-separator-img"/>
+                </div>
+            </div>
+            <div class="nav__separator">
+                <img src="img/separator.svg" id="nav-separator" alt="" class="nav__separator-img" />
+            </div>
+        </nav>
+    </header>
+    <main id="app">
+    <section class="movie__container">
+        <!-- partie gauche -->
+        <div class="movie__visual">
+            <div class="movie__img">
+                <img src="/img/movie_top.svg" alt="film_upper_frame" class="movie__img_separator--upper">
+                <img src="dist/img/films_classic/lalaland_carré.jpg" class="movie__img--poster" alt="La La Land">
+                <img src="/img/movie_bottom.svg" alt="film_lower_frame" class="movie__img_separator--lower">
+
+                <h3 class="movie__title">LA LA LAND</h4>
+                <p class="movie__author">de Damien Chazelle</p>
+                <p class="movie__duration">2h 8m</p>
+                <p class="movie__release">
+                    SORTIE 
+                    <span class="movie__release--date">2016</span>
+                </p>
+            </div>
+        </div>
+
+         <!-- partie droiite -->
+        <div class="movie__info">
+            <h4 class="movie__info--title">Acteurs principaux</h4>
+            <p class="movie__actors">Emma Stone, Ryan Gosling</p>
+            <h4 class="movie__info--title">Synopsis</h4>
+            <p class="movie__synopsis">Au coeur de Los Angeles, une actrice en devenir prénommée Mia sert des cafés entre des auditions. De son côté, Sebastian, passionné de jazz, joue du piano dans des clubs miteux pour assurer sa subsistance. Tous deux sont bien loin de la vie rêvée à laquelle ils aspirent, mais ils développent des sentiments amoureux l'un pour l'autre.</p>
+        </div>
+    </section>
+     

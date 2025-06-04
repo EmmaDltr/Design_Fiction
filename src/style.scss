@@ -47,7 +47,7 @@
 }
 
 
-
+// body 
 body {
   background-image: var(--bg-image);
   background-color: var(--bg-color);
@@ -78,6 +78,10 @@ body {
     font-family: "Brick-variant", sans-serif;
     cursor: pointer;
   }
+  button:hover {
+    background-color: #8673d7;
+    transition: background-color 0.5s ease;
+  }
 }
 
 .decorative__ellipse {
@@ -93,6 +97,8 @@ body {
     display: block;
   }
 }
+
+// Navigation bar
 .nav {
   position: relative;
   margin: auto;
@@ -100,7 +106,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 50px;
+    padding: 20px 0;
   }
 
   &__logo {
@@ -110,6 +116,7 @@ body {
     font-size: 40px;
     color: var(--text-color);
     text-decoration: none;
+    margin-left: 50px;
 
     &--highlight {
       position: absolute;
@@ -136,11 +143,14 @@ body {
       font-style: normal;
       font-size: 20px;
       margin: 0 30px;
-      text-decoration: none; // MArche ppassss
       cursor: pointer;
       a {
         text-decoration: none;
         color: var(--text-color);
+      }
+      a:hover {
+        color: #8673d7;
+        transition: color 0.3s ease;
       }
     }
   }
@@ -160,11 +170,13 @@ body {
     }
   }
 }
-
+// HOME PAGE
+//main 
 main {
   margin: 0 180px;
 }
 
+// Hero section
 .hero {
   display: flex;
   align-items: center;
@@ -230,12 +242,11 @@ main {
       padding: 0 30px;
       transition: all 0.6s;
 
-      // Hover style
       &:hover {
         border-radius: 25px 0;
       }
 
-      // Glow effect
+      // effet de lumière floue
       &::before {
         content: "";
         position: absolute;
@@ -258,13 +269,14 @@ main {
   }
 }
 
+// Film card section
 .wrapper {
   margin-top: -200px;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  margin-bottom: 200px;
+  margin-bottom: 400px;
 
   .film-card {
     position: relative;
@@ -276,6 +288,38 @@ main {
 
     will-change: transform; // ➕ améliore la fluidité
     transition: transform 0.3s ease;
+
+    &__title {
+      display: flex;
+      font-size: 24px;
+      align-items: center;
+
+      img {
+        background-color: #bfbfbf;
+        border-radius: 100%;
+        margin-right: 10px;
+      }
+    }
+
+    &__tags {
+      font-family: "Azedo", sans-serif;
+      font-weight: 700;
+      margin-top: 20px;
+      display: flex;
+      justify-content: space-around;
+
+      .film-tag {
+        padding: 0.25rem 0.5rem;
+        border-radius: 20px;
+        color: #1e1e1e;
+        &:nth-child(1) {
+          background-color: #00FAEB;
+        }
+        &:nth-child(2) {
+          background-color: #8D6BD6;
+        }
+      }
+    }
   }
 
   .processor-zone {
@@ -287,6 +331,31 @@ main {
       z-index: 4;
     }
 
+    .processor__logo {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      height: auto;
+      z-index: 5;
+      
+      font-family: "Azedo", sans-serif;
+      font-weight: 700;
+      font-style: normal;
+      font-size: 40px;
+      color: var(--text-color);
+      text-decoration: none;
+
+      .processor__logo--highlight {
+      position: absolute;
+      font-family: "Brick", sans-serif;
+      font-size: 40px;
+      font-weight: 700;
+      color: #8673d7;
+      top: -30px;
+      }
+    }
+
     .alternative-version {
       position: absolute;
       top: 50%;
@@ -296,12 +365,15 @@ main {
   }
 }
 
+// About section
 .about {
   height: 100vh; // plein écran
+  position: relative;
+  margin-bottom: 600px;
 
   &__content {
     max-width: 900px;
-    position: relative;
+    padding-bottom: 200px;
   }
 
   &__text {
@@ -314,16 +386,42 @@ main {
       color: #8d6bd6;
     }
   }
-  &__quote {
+   &__quote {
     position: absolute;
-    right: 0;
-    text-align: right;
-    font-size: 18px;
-    font-style: italic;
-    line-height: 1.4;
+    text-align: right;    
+    font-size: 31px;
+    
+
+     &--txt {
+    font-family: 'Poppins';
+    font-weight: 400;
+    font-style: normal;
+    }
+
+    &--author {
+      display: block;
+      margin-top: 0.5rem;
+      font-style: normal;
+      font-weight: 600;
+    }
   }
+
+    &__separator {
+      display: flex;
+      justify-content: center;
+      margin-top: 200px;
+
+      &--line{
+        
+      }
+    }
+
+  
 }
 
+
+    
+// Explore section
 .explore {
   display: flex;
   justify-content: center;
@@ -347,7 +445,7 @@ main {
       aspect-ratio: 736 / 534;
     }
   }
-
+// ref: W3 School => https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_image_compare
   .img-comp-slider {
     position: absolute;
     z-index:9;
@@ -388,18 +486,19 @@ main {
 
   &__text {
     font-family: "Poppins", sans-serif;
-    font-size: 24px;
-    margin-left: 60px;
+    font-size: 30px;
+    margin-left: 110px;
     margin-bottom: 20px;
 
     &::marker {
       content: counter(list-item) "/ ";
       color: #8d6bd6;
       font-family: "Brick", sans-serif;
-      font-size: 40px;
+      font-size: 60px;
     } 
   }
 }
+
 
 .frame {
   max-width: 1100px;
@@ -430,13 +529,256 @@ main {
     margin: 0;
   }
 
-  &__text {
+  &__txt {
     position: absolute;
-    right: 175px;
+    right: 165px;
     bottom: 20px;
     font-size: 30px;
     font-family: "Azedo", sans-serif;
     font-weight: 700;
     margin: 0;
+    display: flex;
+    text-align: center;
+
+     &--link {
+      background: linear-gradient(to right, #8673d7, #01faeb);
+      height: 50px;
+      border: none;
+      font-size: 1.3rem;
+      font-family: "Poppins", sans-serif;
+      font-weight: 600;
+      color: #1e1e1e;
+      cursor: pointer;
+      border-radius: 0 25px;
+      position: relative;
+      text-decoration: none;
+      text-align: center;
+      line-height: 50px;
+      padding: 0 30px;
+      transition: all 0.6s;
+
+
+      &:hover {
+        border-radius: 25px 0;
+      }
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(to right, #8673d7, #01faeb);
+        filter: blur(22px);
+        transform: scale(0.9, 0.8) translateY(20px);
+        z-index: -1;
+        opacity: 0;
+        transition: all 0.6s;
+      }
+
+      &:hover::before {
+        opacity: 1;
+      }
+    }
+  }
+
+  }
+
+.catalogue-hero {
+  padding-top: 70px; // ↓ Pour "redescendre" sous la nav
+
+  &__content {
+    padding: 0 20px;
+  }
+
+  &__title {
+    font-size: 60px;
+    font-family: "Azedo", sans-serif; // À ajuster selon ta typo
+    font-weight: 700;
+
+    &::after {
+      content: "?";
+      font-family: 'Brick', sans-serif;
+      font-size: 60px;
+      color: #8d6bd6;
+    }
+  }
+
+  &__txt {
+    font-size: 24px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    margin-top: 30px;
+    line-height: 140%;
+  }
+}
+
+// CATALOGUE CARDS
+
+.catalogue {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 colonnes égales */
+  gap: 1rem; /* espace entre les items */
+  margin-top: 50px; 
+
+  &__item {
+    width: 323px;
+    padding: 1rem;
+    border-radius: 20px;
+    background-color: rgba(141, 107, 214, 0.4); /* aide de chatgpt pour la conversion en RGBA, fond semi transparent*/
+    text-align: center;
+    position: relative;
+  }
+  &__img {
+    width: 230px;
+    height: 314px;
+    object-fit: cover; /* Remplit l’espace sans déformer l’image */
+    height: auto;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  &__title {
+      font-size: 24px;
+      text-align: left;
+      text-transform: uppercase;
+      margin: 10px 0 10px 0;
+  }
+  
+  &__description {
+      font-size: 16px;
+      font-family: 'Poppins', sans-serif;
+      font-style: italic;
+  }
+  
+  &__btn {
+    position: absolute;
+    bottom: 10px;
+    right: 20px;
+  }
+}
+
+
+
+
+// Film Page
+
+.movie {
+  &__container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: start;
+    padding: 2rem;
+    margin-top: 70px;
+  }
+
+  &__visual {
+    position: relative;
+    width: 100%;
+    max-width: 720px;
+  }
+
+  &__img {
+    color: #BFBFBF;
+    position: relative;
+  
+    &--poster {
+      width: 600px;
+    }
+  
+    &_separator--upper,
+    &_separator--lower {
+      position: absolute;
+      width: 100%;
+      pointer-events: none;
+      left: -3px;
+    }
+  
+    &_separator--lower {
+      bottom: 20px;
+    }
+  
+  }
+
+  &__title {
+    position: absolute;
+    margin: 0;
+    top: 50px;
+    left: 40px;
+    font-size: 54px;
+    font-family: 'Azedo', sans-serif;
+  }
+
+  &__author {
+    position: absolute;
+    margin: 0;
+    top: 100px;
+    left: 40px;
+    font-size: 16px;
+    font-family: 'Poppins', sans-serif;
+  }
+
+  &__duration {
+    position: absolute;
+    margin: 0;
+    top: 130px;
+    left: 40px;
+    font-size: 16px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 100;
+  }
+
+  &__release {
+    position: absolute;
+    margin: 0;
+    bottom: 50px;
+    left: 330px;
+    font-size: 30px;
+    font-family: 'Azedo', sans-serif;
+    font-weight: 100;
+    &--date {
+      font-family: 'Poppins', sans-serif;
+      font-size: 16px;
+    }
+  }
+  
+  &__info {
+  
+    &--title {
+      font-size: 30px;
+      font-family: 'Azedo', sans-serif;
+      font-weight: 700;
+      margin-top: 0;
+      margin-bottom: 0.5rem;
+    }
+  
+    .movie__actors,
+    .movie__synopsis {
+      font-size: 1rem;
+      line-height: 140%;
+      margin-bottom: 100px;
+    }
+  }
+}
+
+  // footer 
+
+.footer {
+display: flex;
+justify-content: center;
+align-items: center;
+padding: 100px 0; 
+background-color: #8d6bd6;
+border-radius: 30px;
+padding: 30px 60px;
+box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+
+&__text{
+  font-family: "Poppins", sans-serif;
+  font-size: 1rem;
+  color: white;
+  margin: 0;
   }
 }

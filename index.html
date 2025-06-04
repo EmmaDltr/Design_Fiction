@@ -21,17 +21,17 @@
     <header>
         <nav class="nav">
             <div class="nav__content">
-                <div class="nav__logo">
+                <a href="index.html" class="nav__logo">
                     <span class="nav__logo--highlight">EXP.</span> Sensora
-                </div>
+                </a>
                 <div class="nav__links">
                     <ul class="nav__list">
-                        <li class="nav__list--item"><a href="#home">Home</a></li>
-                        <li class="nav__list--item"><a href="#about">Nos films</a></li>
-                        <li class="nav__list--item"><a href="#contact">Guide</a></li>
+                        <li class="nav__list--item"><a href="index.html">Home</a></li>
+                        <li class="nav__list--item"><a href="catalogue.html">Nos films</a></li>
+                        <li class="nav__list--item"><a href="#guide">Guide</a></li>
                     </ul>
                     <img src="img/right-separator.svg" id="nav-right-separator" alt=""
-                        class="nav__right-separator-img" />
+                        class="nav__right-separator-img"/>
                 </div>
             </div>
             <div class="nav__separator">
@@ -53,27 +53,51 @@
         </section>
         <section class="wrapper">
             <div class="scroll-wrapper">
-                <div class="film-card" id="film">Mon film</div>
+                <div class="film-card" id="film">
+                    <div class="film-card__title">
+                        <img src="/img/clap.png" alt="Clap de cinéma" width="50px" class="film-card__clap">
+                        Mon film
+                    </div>
+                    <div class="film-card__tags">
+                        <span class="film-tag">Genre</span>
+                        <span class="film-tag">Emotion</span>
+                    </div>
+                </div>
             </div>
             <div class="processor-zone">
                 <img src="img/processor_dark.svg" alt="" id="processor">
-                <div class="alternative-version" id="alternative-version"> alternative-version </div>
+
+                <div class="processor__logo">
+                    <span class="processor__logo--highlight">EXP.</span> Sensora
+                </div> 
+        
+
+                <div class="alternative-version" id="alternative-version"> version </div>
             </div>
         </section>
-        <section class="about">
+        <section class="about" id="about">
             <div class="about__content">
                 <p class="about__text">Bienvenue dans une nouvelle ère, où l'<span
                         class="about__text--highlight">intelligence artificielle</span> réinvente vos films préférés, en
                     transformant <span class="about__text--highlight">vos émotions</span> en scénarios vivants.</p>
-                <p class="about__text">Imaginez <span class="about__text--highlight">La La Land</span>en film d’horreur,
+                <p class="about__text">Imaginez <span class="about__text--highlight">La La Land</span> en film d’horreur,
                     <span class="about__text--highlight">Titanic</span> porté par l’euphorie, ou <span
                         class="about__text--highlight">Inception</span> teinté de tendresse. Ici, plus de films figés :
                     chaque projection est une expérience unique, une rencontre entre les classiques du cinéma et vos
                     ressentis.</p>
-                <blockquote class="about__quote"> « Un film, ce n’est pas ce que l’on voit, mais ce que l’on ressent. »
-                    <cite class="about__author">— Andrei Tarkovski</cite>
+            </div>
+            <div class="about__quote">
+                <blockquote class="about__quote--txt"> « Un film, ce n’est pas ce que l’on voit, mais ce que l’on ressent. »
+                    <cite class="about__quote--author">— Andrei Tarkovski</cite>
                 </blockquote>
             </div>
+            <div class="about__separator">
+                <img src="dist/img/direction_line.svg" class="about__separator--line" alt="Direction line">
+            </div>
+           
+
+
+            
         </section>
         <section class="explore">
             <div class="frame">
@@ -86,15 +110,15 @@
                     </div>
                 </div>
                 <h2 class="frame__title">Explorez</h2>
-                <h4 class="frame__text">Votre propre cinéma</h4>
+                <h4 class="frame__txt">Votre propre cinéma</h4>
                 <img class="frame__img" src="img/cadre.svg" alt="">
             </div>
         </section>
-        <section class="guide">
+        <section class="guide" id="guide">
             <div class="frame frame--nocenter">
                 <h2 class="frame__title">Manuel</h2>
-                <p class="frame__text">
-                    <a class="guide__btn" href="catalogue.html"> Créez votre expérience </a>
+                <p class="frame__txt">
+                    <a class="frame__txt--link" href="catalogue.html"> Créez votre expérience </a>
                 </p>
                 <div class="guide__content">
                     <ol>
@@ -110,4 +134,9 @@
     </main>
 </body>
 
+<footer class="footer">
+    <div class="footer__content">
+        <p class="footer__text">© Emma Deltenre 2025 Sensora. Tous droits réservés.</p>
+    </div>
+</footer>
 </html>

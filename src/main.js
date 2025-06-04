@@ -6,21 +6,36 @@ import { gsap } from "gsap";
 import './style.scss';
 const page = window.location.pathname;
 
+const blackColor = '#1e1e1e';
+const whiteColor = '#bfbfbf';
+
+const blackBg = "url(\"/img/background_dark.png\")"
+const whiteBg = "url(\"/img/background_light.png\")";
 
 const btn = document.getElementById('toggle-theme');
 const app = document.getElementById('app');
-let isDark = true;
+
+let isDark = JSON.parse(localStorage.getItem('isDarkMode'));
+if (isDark === null) isDark = true; // par défaut
+
+// initialiser les couleurs
+gsap.set(':root', {
+    '--bg-color': isDark ? blackColor : whiteColor,
+    '--text-color': isDark ? whiteColor : blackColor,
+    '--bg-image': isDark ? blackBg : whiteBg
+});
+
+// changer l'icône du processeur en fonction du thème
+if (page.endsWith("index.html") || page === "/") {
+    const processor = document.getElementById('processor');
+    processor.src = isDark ? '/img/processor_dark.svg' : '/img/processor_light.svg';
+}
 
 const processor = document.getElementById('processor');
 
 btn.addEventListener('click', () => {
     // direction du slide
     const direction = isDark ? '-100%' : '100%';
-    const blackColor = '#1e1e1e';
-    const whiteColor = '#bfbfbf';
-
-    const blackBg = "url(\"/img/background_dark.png\")"
-    const whiteBg = "url(\"/img/background_light.png\")";
     // slide out
     gsap.to(app, {
         x: direction,
@@ -46,6 +61,7 @@ btn.addEventListener('click', () => {
             );
 
             isDark = !isDark;
+            localStorage.setItem('isDarkMode', JSON.stringify(isDark));
         }
     });
 });
