@@ -46,6 +46,9 @@
   --text-color: #bfbfbf;
 }
 
+*{
+  scroll-behavior: smooth;
+}
 
 // body 
 body {
@@ -410,13 +413,7 @@ main {
       display: flex;
       justify-content: center;
       margin-top: 200px;
-
-      &--line{
-        
-      }
     }
-
-  
 }
 
 
@@ -637,6 +634,10 @@ main {
     height: auto;
     border-radius: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+
+    &:hover {
+      transform: scale(1.05); /* Légère augmentation de la taille au survol */
+    }
   }
   
   &__title {
@@ -656,6 +657,10 @@ main {
     position: absolute;
     bottom: 10px;
     right: 20px;
+
+    :hover {
+      translate: 0 5px;
+    }
   }
 }
 
