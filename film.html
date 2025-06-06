@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 
 <head>
     <title>Sensora</title>
@@ -9,6 +9,9 @@
     <meta name="description" content="Sensora - Une application web">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script type="module" src="src/main.js" defer></script>
+    <script type="module" src="src/films.js"></script>
+</body>
+
 </head>
 
 <body>
@@ -18,13 +21,13 @@
     <div class="decorative__ellipse">
         <img src="img/ellipse.svg" alt="" class="decorative__ellipse--img" />
     </div>
-    <header>
+     <header>
         <nav class="nav">
             <div class="nav__content">
                 <a href="index.html" class="nav__logo">
                     <span class="nav__logo--highlight">EXP.</span> Sensora
                 </a>
-                <div class="nav__links">
+                <div class="nav__links" id="nav-links">
                     <ul class="nav__list">
                         <li class="nav__list--item"><a href="index.html">Home</a></li>
                         <li class="nav__list--item"><a href="catalogue.html">Nos films</a></li>
@@ -32,6 +35,11 @@
                     </ul>
                     <img src="img/right-separator.svg" id="nav-right-separator" alt=""
                         class="nav__right-separator-img"/>
+                </div>
+                <div id="burger" class="burger">
+                    <div class="burger__line"></div>
+                    <div class="burger__line"></div>
+                    <div class="burger__line"></div>
                 </div>
             </div>
             <div class="nav__separator">
@@ -66,4 +74,91 @@
             <p class="movie__synopsis">Au coeur de Los Angeles, une actrice en devenir prénommée Mia sert des cafés entre des auditions. De son côté, Sebastian, passionné de jazz, joue du piano dans des clubs miteux pour assurer sa subsistance. Tous deux sont bien loin de la vie rêvée à laquelle ils aspirent, mais ils développent des sentiments amoureux l'un pour l'autre.</p>
         </div>
     </section>
-     
+    <section class="play__container">
+        <div class="play__title">
+            <h2 class="play__title--text">A vous de jouer</h2>
+        </div>
+        <div class="play__text">
+            <p>*Pour des raisons techniques, l’expérience est simulée à l’aide d’exemples prédéfinis.</p>
+            <div class="play__step">
+                <div>
+                    <p>Glissez pour ajuster l'intensité de chaque émotion*</p>
+                    <canvas id="myChart" width="100" height="100"></canvas>
+                </div>
+                <div>
+                    <p>Choissez 2 genres maximum*</p>
+                    <div class="genres">
+                        <span class="genres__item">
+                            Romance
+                        </span>
+                        <span class="genres__item">
+                            Drame
+                        </span>
+                        <span class="genres__item">
+                            Thriller
+                        </span>
+                        <span class="genres__item">
+                            Comédie
+                        </span>
+                        <span class="genres__item">
+                            Musical
+                        </span>
+                        <span class="genres__item">
+                            Western
+                        </span>
+                        <span class="genres__item">
+                            Horreur
+                        </span>
+                        <span class="genres__item">
+                            Fantastique
+                        </span>
+                        <span class="genres__item">
+                            Docu
+                        </span>
+                        <span class="genres__item">
+                            Science fiction
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <div class="hero__btn">
+         <a href="#results" class="hero__btn--link">Générer</a>
+    </div>
+    <section class="results__container" id="results">
+        <div class="frame frame--nocenter">
+                <h2 class="frame__title frame__title--results">Votre version</h2>
+                <div class="results__content">
+                    <p class="results__version">Dans un Los Angeles figé dans le temps, Mia, une jeune actrice pleine de rêves, enchaîne les auditions ratées tout en travaillant dans un vieux café qui semble n'avoir jamais vu la lumière du jour. Un soir, elle croise Sebastian, un pianiste aussi passionné que tourmenté, qui joue dans un club de jazz abandonné, ouvert uniquement à ceux qui n’ont plus rien à perdre. Leur histoire d’amour, portée par la musique et le souvenir d’un monde plus doux, s’épanouit au fil de nuits vibrantes… mais hantées.</p>
+                        
+                    <p class="results__version">Plus ils se rapprochent, plus la ville semble se décomposer autour d’eux : les rues se vident, les visages s’effacent, et des mélodies oubliées résonnent dans les murs. Chaque pas vers leur rêve les plonge un peu plus dans un cauchemar qu’ils refusent de voir. Entre rires nerveux, tendresse désespérée, visions terrifiantes et danse au bord de la folie, Mia et Sebastian doivent choisir : fuir le passé… ou danser avec lui jusqu’à la fin.</p>
+                  
+                </div>
+                <img class="frame__img" src="img/cadre.svg" alt="">
+            </div>
+    </section>
+    </main>
+    <footer class="footer">
+  <div class="footer__wrapper">
+    <div class="footer__credits">
+      <a href="credit.html" class="footer__credits--link">Crédits</a>
+      <p class="footer__copyright">© 2025 - Emma Deltenre</p>
+    </div>
+
+    <div class="footer__info">
+      <p class="footer__simulation">Ceci est une simulation.</p>
+      <p class="footer__description">
+        Un projet de design fiction explorant l’avenir de la narration interactive par les émotions.<br>
+        Basé sur des films cultes, réinterprétés à travers vos ressentis.
+      </p>
+    </div>
+
+    <div class="footer__logo">
+      <img src="/img/logo.png" alt="Logo">
+    </div>
+  </div>
+</footer>
+</body>
+</html>

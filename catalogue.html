@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <title>Sensora</title>
     <link rel="shortcut icon" href="assets/img/favicon.png">
@@ -9,6 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <script type="module" src="src/main.js" defer></script>
+    <script type="module" src="src/catalogue.js" defer></script>
 </head>
 
 <body>
@@ -24,7 +25,7 @@
                 <a href="index.html" class="nav__logo">
                     <span class="nav__logo--highlight">EXP.</span> Sensora
                 </a>
-                <div class="nav__links">
+                <div class="nav__links" id="nav-links">
                     <ul class="nav__list">
                         <li class="nav__list--item"><a href="index.html">Home</a></li>
                         <li class="nav__list--item"><a href="catalogue.html">Nos films</a></li>
@@ -32,6 +33,11 @@
                     </ul>
                     <img src="img/right-separator.svg" id="nav-right-separator" alt=""
                         class="nav__right-separator-img"/>
+                </div>
+                <div id="burger" class="burger">
+                    <div class="burger__line"></div>
+                    <div class="burger__line"></div>
+                    <div class="burger__line"></div>
                 </div>
             </div>
             <div class="nav__separator">
@@ -42,36 +48,25 @@
     <main id="app">
         <section class="catalogue-hero">
             <div class="catalogue-hero__content">
-                <h3 class="catalogue-hero__title">Quel film allez vous composer </h2>
+                <h3 class="catalogue-hero__title">Quel film allez vous composer </h3>
                 <div class="catalogue-hero__txt">
                     <p>Prêt à jouer avec x films préférés ? Plongez dans notre catalogue culte, mixez les genres, saupoudrez d’émotions, et découvrez les versions inédites des plus grands classiques.</p>
                     <p> Horreur romantique ? Comédie anxiogène ? À vous de jouer, et surtout… amusez-vous !</p>
                 </div>
             </div>
         </section>
-       <section class="filter">
-            <div class="filter__content">
-                <form class="filter__form">
-                    <label for="classer">Classer par:</label>
-                    <select id="classer" name="classer">
-                        <option value="new">le plus récent</option>
-                        <option value="old">le plus ancien</option>
-                    </select>
-                    <label for="genre">Genre :</label>
-                    <select id="genre" name="genre">
-                        <option value="all">Tous</option>
-                        <option value="action">Action</option>
-                        <option value="comedy">Comédie</option>
-                        <option value="drama">Drame</option>
-                        <option value="horror">Horreur</option>
-                        <option value="romance">Romance</option>
-                    </select>
-                    <a class="filter__btn" href="film.html">Aléatoire</a>
-                </form>
-            </div>
-        </section>
+      <section class="tags-filter">
+        <div class="tags-filter__container">
+            <div class="tag" data-tag="all">ALL</div>
+            <div class="tag" data-tag="drama-romance">DRAME-ROMANCE <span class="tag__close">×</span></div>
+            <div class="tag" data-tag="comedy">COMEDIE <span class="tag__close">×</span></div>
+            <div class="tag" data-tag="action">ACTION <span class="tag__close">×</span></div>
+            <div class="tag" data-tag="thriller">THRILLER <span class="tag__close">×</span></div>
+            <div class="tag" data-tag="science-fiction">SCIENCE FICTION <span class="tag__close">×</span></div>
+        </div>
+    </section>
         <section class="catalogue">
-            <div class="catalogue__item">
+            <div class="catalogue__item" data-genre="thriller, science-fiction">
                 <h5 class="catalogue__title">Blade Runner</h5>
                 <a href="film.html?id=blade">
                 <img class="catalogue__img" 
@@ -80,11 +75,11 @@
                     alt="Blade Runner">
                 </a>
                 <p class="catalogue__description">De Ridley Scott</p>
-                <a class="catalogue__btn" href="film.html">
+                <a class="catalogue__btn" href="film.html?id=blade">
                     <img src="/img/arrow.png" alt="">
                 </a>
             </div>
-            <div class="catalogue__item">
+            <div class="catalogue__item" data-genre="thriller">
                 <h5 class="catalogue__title">Black Swan</h5>
                 <a href="film.html?id=black">
                 <img class="catalogue__img" 
@@ -93,11 +88,11 @@
                     alt="Black Swan">
                 </a>
                 <p class="catalogue__description">De Darren Aronofsky</p>
-                <a class="catalogue__btn" href="film.html">
+                <a class="catalogue__btn" href="film.html?id=black">
                     <img src="/img/arrow.png" alt="">
                 </a>
             </div>
-             <div class="catalogue__item">
+             <div class="catalogue__item" data-genre="drama-romance">
                 <h5 class="catalogue__title">Dirty Dancing</h5>
                 <a href="film.html?id=dirty">
                 <img class="catalogue__img" 
@@ -106,11 +101,11 @@
                     alt="Dirty Dancing">
                 </a>
                 <p class="catalogue__description">De Emile Ardolino</p>
-                <a class="catalogue__btn" href="film.html">
+                <a class="catalogue__btn" href="film.html?id=dirty">
                     <img src="/img/arrow.png" alt="">
                 </a>
             </div>
-             <div class="catalogue__item">
+             <div class="catalogue__item" data-genre="drama-romance">
                 <h5 class="catalogue__title">Forrest Gump</h5>
                 <a href="film.html?id=forrest">
                 <img class="catalogue__img" 
@@ -119,11 +114,11 @@
                     alt="Forrest Gump">
                 </a>
                 <p class="catalogue__description">De Robert Zemeckis</p>
-                <a class="catalogue__btn" href="film.html">
+                <a class="catalogue__btn" href="film.html?id=forrest">
                     <img src="/img/arrow.png" alt="">
                 </a>
             </div>
-            <div class="catalogue__item">
+            <div class="catalogue__item" data-genre="comedy">
                 <h5 class="catalogue__title">Grease</h5>
                 <a href="film.html?id=grease">
                 <img class="catalogue__img" 
@@ -132,11 +127,11 @@
                     alt="Grease">
                 </a>
                 <p class="catalogue__description">De Randal Kleiser</p>
-                <a class="catalogue__btn" href="film.html">
+                <a class="catalogue__btn" href="film.html?id=grease">
                     <img src="/img/arrow.png" alt="">
                 </a>
             </div>
-            <div class="catalogue__item">
+            <div class="catalogue__item" data-genre="action, thriller">
                 <h5 class="catalogue__title">Inception</h5>
                 <a href="film.html?id=inception">
                 <img class="catalogue__img" 
@@ -145,11 +140,11 @@
                     alt="Inception">
                 </a>
                 <p class="catalogue__description">De Christopher Nolan</p>
-                <a class="catalogue__btn" href="film.html">
+                <a class="catalogue__btn" href="film.html?id=inception">
                     <img src="/img/arrow.png" alt="">
                 </a>
             </div>
-            <div class="catalogue__item">
+            <div class="catalogue__item" data-genre="science-fiction">
                 <h5 class="catalogue__title">Interstellar</h5>
                 <a href="film.html?id=interstellar">
                 <img class="catalogue__img" 
@@ -158,11 +153,11 @@
                     alt="Interstellar">
                 </a>
                 <p class="catalogue__description">De Christopher Nolan</p>
-                <a class="catalogue__btn" href="film.html">
+                <a class="catalogue__btn" href="film.html?id=interstellar">
                     <img src="/img/arrow.png" alt="">
                 </a>
             </div>
-            <div class="catalogue__item">
+            <div class="catalogue__item" data-genre="drama-romance, comedy">
                 <h5 class="catalogue__title">La La Land</h5>
                 <a href="film.html?id=lalaland">
                 <img class="catalogue__img" 
@@ -171,11 +166,11 @@
                     alt="La La Land">
                 </a>
                 <p class="catalogue__description">De Damien Chazelle</p>
-                <a class="catalogue__btn" href="film.html">
+                <a class="catalogue__btn" href="film.html?id=lalaland">
                     <img src="/img/arrow.png" alt="">
                 </a>
             </div>
-            <div class="catalogue__item">
+            <div class="catalogue__item" data-genre="drama-romance, comedy">
                 <h5 class="catalogue__title">Amélie poulain</h5>
                 <a href="film.html?id=amelie">
                 <img class="catalogue__img" 
@@ -184,11 +179,11 @@
                     alt="amélie poulain">
                 </a>
                 <p class="catalogue__description">De Jean-Pierre Jeunet</p>
-                <a class="catalogue__btn" href="film.html">
+                <a class="catalogue__btn" href="film.html?id=amelie">
                     <img src="/img/arrow.png" alt="">
                 </a>
             </div>
-            <div class="catalogue__item">
+            <div class="catalogue__item" data-genre="comedy">
                 <h5 class="catalogue__title">Les bronzés</h5>
                 <a href="film.html?id=bronzes">
                 <img class="catalogue__img" 
@@ -197,11 +192,11 @@
                     alt="Les bronzés">
                 </a>
                 <p class="catalogue__description">De Patrice Leconte</p>
-                <a class="catalogue__btn" href="film.html">
+                <a class="catalogue__btn" href="film.html?id=bronzes">
                     <img src="/img/arrow.png" alt="">
                 </a>
             </div>
-            <div class="catalogue__item">
+            <div class="catalogue__item" data-genre="comedy">
                 <h5 class="catalogue__title">Mamma Mia</h5>
                 <a href="film.html?id=mamma">
                 <img class="catalogue__img" 
@@ -210,11 +205,11 @@
                     alt="Mamma Mia">
                 </a>
                 <p class="catalogue__description">De Phyllida Lloyd</p>
-                <a class="catalogue__btn" href="film.html">
+                <a class="catalogue__btn" href="film.html?id=mamma">
                     <img src="/img/arrow.png" alt="">
                 </a>
             </div>
-            <div class="catalogue__item">
+            <div class="catalogue__item" data-genre="drama-romance, comedy">
                 <h5 class="catalogue__title">Pretty Woman</h5>
                 <a href="film.html?id=pretty">
                 <img class="catalogue__img" 
@@ -223,11 +218,11 @@
                     alt="Pretty Woman">
                 </a>
                 <p class="catalogue__description">De Garry Marshall</p>
-                <a class="catalogue__btn" href="film.html">
+                <a class="catalogue__btn" href="film.html?id=pretty">
                     <img src="/img/arrow.png" alt="">
                 </a>
             </div>
-            <div class="catalogue__item">
+            <div class="catalogue__item" data-genre="thriller">
                 <h5 class="catalogue__title">Psychose</h5>
                 <a href="film.html?id=psychose">
                 <img class="catalogue__img" 
@@ -236,11 +231,11 @@
                     alt="Psychose">
                 </a>
                 <p class="catalogue__description">De Alfred Hitchcock</p>
-                <a class="catalogue__btn" href="film.html">
+                <a class="catalogue__btn" href="film.html?id=psychose">
                     <img src="/img/arrow.png" alt="">
                 </a>
             </div>
-            <div class="catalogue__item">
+            <div class="catalogue__item" data-genre="action, thriller">
                 <h5 class="catalogue__title">Pulp Fiction</h5>
                 <a href="film.html?id=pulp">
                 <img class="catalogue__img" 
@@ -249,11 +244,11 @@
                     alt="Pulp Fiction">
                 </a>
                 <p class="catalogue__description">De Quentin Tarantino</p>
-                <a class="catalogue__btn" href="film.html">
+                <a class="catalogue__btn" href="film.html?id=pulp">
                     <img src="/img/arrow.png" alt="">
                 </a>
             </div>
-            <div class="catalogue__item">
+            <div class="catalogue__item" data-genre="thriller">
                 <h5 class="catalogue__title">Shining</h5>
                 <a href="film.html?id=shining">
                 <img class="catalogue__img" 
@@ -262,11 +257,11 @@
                     alt="Shining">
                 </a>
                 <p class="catalogue__description">De Stanley Kubrick</p>
-                <a class="catalogue__btn" href="film.html">
+                <a class="catalogue__btn" href="film.html?id=shining">
                     <img src="/img/arrow.png" alt="">
                 </a>
             </div>
-            <div class="catalogue__item">
+            <div class="catalogue__item" data-genre="drama-romance">
                 <h5 class="catalogue__title">The Breakfast Club</h5>
                 <a href="film.html?id=breakfast">
                 <img class="catalogue__img" 
@@ -275,11 +270,11 @@
                     alt="The Breakfast Club">
                 </a>
                 <p class="catalogue__description">De John Hughes</p>
-                <a class="catalogue__btn" href="film.html">
+                <a class="catalogue__btn" href="film.html?id=breakfast">
                     <img src="/img/arrow.png" alt="">
                 </a>
             </div>
-            <div class="catalogue__item">
+            <div class="catalogue__item" data-genre="drama-romance">
                <h5 class="catalogue__title">Titanic</h5>
                <a href="film.html?id=titanic">
                <img class="catalogue__img" 
@@ -288,11 +283,11 @@
                     alt="Titanic">
                 </a>
                <p class="catalogue__description">De James Cameron</p>
-               <a class="catalogue__btn" href="film.html">
+               <a class="catalogue__btn" href="film.html?id=titanic">
                    <img src="/img/arrow.png" alt="">
                </a>
            </div>
-            <div class="catalogue__item">
+            <div class="catalogue__item" data-genre="action, science-fiction">
                 <h5 class="catalogue__title">Matrix</h5>
                 <a href="film.html?id=matrix">
                 <img class="catalogue__img" 
@@ -301,10 +296,33 @@
                     alt="Matrix">
                 </a>
                 <p class="catalogue__description">De Lana Wachowski, Lilly Wachowski</p>
-                <a class="catalogue__btn" href="film.html">
+                <a class="catalogue__btn" href="film.html?id=matrix">
                     <img src="/img/arrow.png" alt="">
                 </a>
             </div>
             
         </section>
+    </main>
+<footer class="footer">
+  <div class="footer__wrapper">
+    <div class="footer__credits">
+      <a href="credit.html" class="footer__credits--link">Crédits</a>
+      <p class="footer__copyright">© 2025 - Emma Deltenre</p>
+    </div>
+
+    <div class="footer__info">
+      <p class="footer__simulation">Ceci est une simulation.</p>
+      <p class="footer__description">
+        Un projet de design fiction explorant l’avenir de la narration interactive par les émotions.<br>
+        Basé sur des films cultes, réinterprétés à travers vos ressentis.
+      </p>
+    </div>
+
+    <div class="footer__logo">
+      <img src="/img/logo.png" alt="Logo">
+    </div>
+  </div>
+</footer>
+</body>
+</html>
         

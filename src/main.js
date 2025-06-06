@@ -72,3 +72,18 @@ if (page.endsWith("index.html") || page === "/") {
 if (page.endsWith("catalogue.html") || page === "catalogue") {
     import('./catalogue.js');
 }
+
+const burger = document.getElementById('burger');
+
+burger.addEventListener('click', () => {
+    const nav = document.getElementById("nav-links");
+    const isOpen = nav.classList.contains('open');
+
+    if (isOpen) {
+        burger.classList.remove('active');
+        nav.classList.remove('open');
+    } else {
+        burger.classList.add('active');
+        nav.classList.add('open');
+    }
+});

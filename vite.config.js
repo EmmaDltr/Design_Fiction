@@ -1,6 +1,7 @@
 import { defineConfig } from 'vite'
 import { resolve } from 'path'
 
+
 export default defineConfig({
     build: {
         rollupOptions: {
@@ -10,5 +11,10 @@ export default defineConfig({
                 film: resolve(__dirname, 'film.html'),
             }
         }
+    },
+    server: {
+        host: true,       // rend accessible depuis ton IP locale
+        port: 5173        // change si besoin
     }
+
 });
